@@ -1,0 +1,37 @@
+CREATE DATABASE estate;
+
+
+CREATE TABLE property(
+	property_name VARCHAR(50),
+	property_price DECIMAL(10,2)
+);
+
+
+
+CREATE TABLE customer(
+	customer_fullname VARCHAR(50),
+	customer_email VARCHAR(320),
+	customer_address VARCHAR(90) NOT NULL DEFAULT 'Not Available'
+);
+
+
+
+ALTER TABLE customer ADD COLUMN customer_id INT NOT NULL AUTO_INCREMENT;
+
+
+
+INSERT INTO customer
+	VALUES(NULL, 'Ojo Dada', 'ojo@gmail.com', 'Lagos');
+
+
+
+INSERT INTO customer(customer_fullname,customer_email,customer_address)
+	VALUES('Anthony Joshua', 'josh@gmail.com', 'Abuja');
+
+
+
+INSERT INTO customer SET 
+	customer_id=NULL,
+	customer_fullname= 'Chichi Gold',
+	customer_email= 'gold@gmail.com',
+	customer_address= 'Akure';
